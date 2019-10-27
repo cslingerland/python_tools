@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 data = pd.read_csv('skaters_small.csv')
 #data = data[data.situation == 'all']
-data = data.query('team=="DET" and situation=="all"')
+data = data.query('team=="EDM" and situation=="all"')
 data = data.sort_values(ascending=False, by='I_F_points')
 
 
@@ -34,7 +34,7 @@ ax.barh(people, points)
 ax.set_yticklabels(people)
 ax.invert_yaxis()  # labels read top-to-bottom
 ax.set_xlabel('Points')
-ax.set_title('2018-2019 Point Totals')
+ax.set_title(data['team'].values[0] + '\n2018-2019 Point Totals')
 fig.set_size_inches((20, 6))
 
 
